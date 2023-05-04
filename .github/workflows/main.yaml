@@ -23,7 +23,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.B }}
           aws-session-token: ${{ secrets.C}}
           aws-region: us-east-1
-      - name: Terraform Ini
+      - name: Terraform Init
         run: |
           cd deployEC2
           terraform init
