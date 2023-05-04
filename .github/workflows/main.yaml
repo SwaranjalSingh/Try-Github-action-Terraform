@@ -38,4 +38,4 @@ jobs:
       - name: Terraform Destroy
         run: |
           cd deployEC2
-          yes | terraform apply -destroy
+          terraform apply -destroy -auto-approve
