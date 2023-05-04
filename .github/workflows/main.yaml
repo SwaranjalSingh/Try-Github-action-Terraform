@@ -38,4 +38,4 @@ jobs:
       - name: Terraform Destroy
         run: |
           cd deployEC2
-          terraform apply -destroy
+          yes | terraform apply -destroy
