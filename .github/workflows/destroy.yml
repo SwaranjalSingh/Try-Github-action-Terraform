@@ -1,0 +1,29 @@
+name: Terraform-Destroy-EC2
+on:
+  push:
+    branches:
+      - main
+  pull_request: null
+permissions:
+  contents: read
+jobs:
+  terraform:
+    name: Terraform
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # - name: Setup Terraform
+      #   uses: hashicorp/setup-terraform@v1
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.A }}
+          aws-secret-access-key: ${{ secrets.B }}
+          aws-session-token: ${{ secrets.C}}
+          aws-region: us-east-1
+      - name: Terraform Destroy
+        run: |
+          cd deployEC2
+          terraform destroy -auto-approve
