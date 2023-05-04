@@ -8,7 +8,7 @@ permissions:
   contents: read
 jobs:
   terraform:
-    name: Terraform
+    name: Terrafor
     runs-on: ubuntu-latest
     environment: production
     steps:
@@ -23,6 +23,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.B }}
           aws-session-token: ${{ secrets.C}}
           aws-region: us-east-1
+      - name: Terraform Init
+        run: |
+          cd deployEC2
+          terraform init
       - name: Terraform Destroy
         run: |
           cd deployEC2
