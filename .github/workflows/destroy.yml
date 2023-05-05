@@ -28,7 +28,7 @@ jobs:
         run: |
           cd deployEC2
           terraform init
-      -name: terraform Destroy
+      - name: terraform Destroy
         run: |
           cd deployEC2
           terraform destroy -auto-approve
