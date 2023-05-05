@@ -24,11 +24,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.B }}
           aws-session-token: ${{ secrets.C}}
           aws-region: us-east-1
-      - name: Terraform Init
+      - name: Terraform Init&Destroy
         run: |
           cd deployEC2
           terraform init
-      - name: Terraform Destroy
-        run: |
-          cd deployEC2
-          terraform apply -destroy -auto-approve
+          terraform destroy -auto-approve
