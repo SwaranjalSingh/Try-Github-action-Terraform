@@ -21,7 +21,7 @@ provider "aws" {
 # }
 
 resource "aws_s3_bucket" "s3_bucket" {
-  bucket = "Swaranjal"
+  bucket = "swaranjal"
   tags = {
     Name    = "Swaranjal"
     Owner   = "Swaranjal.singh@cloudeq.com"
