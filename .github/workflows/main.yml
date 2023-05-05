@@ -1,9 +1,10 @@
 name: Terraform-Deploy-EC2
 on:
-  push:
-    branches:
-      - main
-  pull_request: null
+  # push:
+  #   branches:
+  #     - main
+  # pull_request: null
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
