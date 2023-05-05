@@ -1,21 +1,21 @@
-name: Trigger Build Workflow
+# name: Trigger Build Workflow
 
-on:
-  workflow_dispatch:
-    inputs:
-      workflow_file:
-        description: 'Workflow file to run'
-        required: true
-        default: 'main.yml'
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       workflow_file:
+#         description: 'Workflow file to run'
+#         required: true
+#         default: 'main.yml'
 
-jobs:
-  trigger:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Trigger Build Workflow
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.D }}
-          repository: ${{ github.repository }}
-          event-type: trigger_build
-          client-payload: '{"workflow_file": "${{ github.event.inputs.workflow_file }}"}'
+# jobs:
+#   trigger:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Trigger Build Workflow
+#         uses: peter-evans/repository-dispatch@v1
+#         with:
+#           token: ${{ secrets.D }}
+#           repository: ${{ github.repository }}
+#           event-type: trigger_build
+#           client-payload: '{"workflow_file": "${{ github.event.inputs.workflow_file }}"}'
