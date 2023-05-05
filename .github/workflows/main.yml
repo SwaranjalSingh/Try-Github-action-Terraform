@@ -35,4 +35,4 @@ jobs:
       - name: Terraform Apply
         run: |
           cd deployEC2
-          terraform apply -auto-approve
+          terraform apply -state -auto-approve
